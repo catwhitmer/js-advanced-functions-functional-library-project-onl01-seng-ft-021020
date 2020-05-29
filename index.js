@@ -5,7 +5,8 @@ const fi = (function() {
     },
 
     each: function() {
-
+      fi.each([1, 2, 3, 4], alert)
+      const x1 = x => Object.assign({}, x, { val: x.val + 1});
     },
 
     map: function() {
