@@ -4,9 +4,12 @@ const fi = (function() {
       return 'Start by reading https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0'
     },
 
-    each: function() {
-      fi.each([1, 2, 3, 4], alert)
-      const x1 = x => Object.assign({}, x, { val: x.val + 1});
+  each: function(collection, callback) {
+      let mutated = collection.isArray ? collection.splice() : Object.values(collection);
+      for (let i = 0; i < mutated.length; i++) {
+        callback(mutated[i]);
+      }
+      return collection;
     },
 
     map: function() {
